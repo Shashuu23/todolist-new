@@ -3,7 +3,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify";
 import axios from 'axios'
-import './TodoList.css';
+import './Todolist.css';
 
 
 
