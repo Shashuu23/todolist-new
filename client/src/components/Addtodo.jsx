@@ -1,6 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { toast } from 'react-toastify';
+import './Addtodo.css';
+
 
 const Addtodo = () => {
     const [message, setMessage]= useState('');

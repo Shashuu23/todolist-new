@@ -3,6 +3,8 @@ import { AiFillEdit } from "react-icons/ai";
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify";
 import axios from 'axios'
+import './TodoList.css';
+
 
 
 const TodoList = () => {
@@ -92,31 +94,33 @@ const handleCancelEdit = () => {
 }
 
 return (
-    <div>
-        {isEditing ?(
-         <div>
-     <input 
-      type="text"
-      value={currentTodo.message}
-      onChange={handleEditInputChange}
-    />
-    <button onClick={handleUpdate}>Update</button>
-    <button onClick={handleCancelEdit}>Cancel</button>
-    </div>
-) : (
-    <ul>
+  <div className="todo-container">
+    {isEditing ? (
+      <div>
+        <input
+          type="text"
+          value={currentTodo.message}
+          onChange={handleEditInputChange}
+        />
+        <button onClick={handleUpdate}>Update</button>
+        <button onClick={handleCancelEdit}>Cancel</button>
+      </div>
+    ) : (
+      <ul>
         {todos.map((todo) => (
-            <li key={todo._id}>
-                {todo.message}
-                <AiFillEdit  className="icon" onClick={() => handleEdit(todo)} />
-
-             <AiFillDelete className="icon" onClick={() =>  handleDelete(todo._id)} />       
-            </li>
+          <li key={todo._id}>
+            {todo.message}
+            <span>
+              <AiFillEdit className="icon" onClick={() => handleEdit(todo)} />
+              <AiFillDelete className="icon" onClick={() => handleDelete(todo._id)} />
+            </span>
+          </li>
         ))}
-    </ul>
- )}
-</div>
+      </ul>
+    )}
+  </div>
 );
+
 };
 export default TodoList;
 
