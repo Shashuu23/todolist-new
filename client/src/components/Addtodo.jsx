@@ -18,7 +18,7 @@ const Addtodo = () => {
         }
 
         try {
-            const response = await axios.post('https://to-do-list-backend-vvqd.onrender.com/todolist/', {
+            const response = await axios.post('https://todolist-new-backend-1gue.onrender.com/todolist/', {
                 message:message,
             });
         if (response.data.success === 'created') {
